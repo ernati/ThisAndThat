@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\dev\\repos\\ThisAndThat\\projects\\ThisAndThat\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{79A0F9B9-0C50-471A-8BC8-CED03521E5B6}|GetDataAndPrintDataUsingCurl\\GetDataAndPrintDataUsingCurl.vcxproj|D:\\dev\\repos\\ThisAndThat\\projects\\ThisAndThat\\GetDataAndPrintDataUsingCurl\\test.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{79A0F9B9-0C50-471A-8BC8-CED03521E5B6}|GetDataAndPrintDataUsingCurl\\GetDataAndPrintDataUsingCurl.vcxproj|solutionrelative:GetDataAndPrintDataUsingCurl\\test.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "test.cpp",
+              "DocumentMoniker": "D:\\dev\\repos\\ThisAndThat\\projects\\ThisAndThat\\GetDataAndPrintDataUsingCurl\\test.cpp",
+              "RelativeDocumentMoniker": "GetDataAndPrintDataUsingCurl\\test.cpp",
+              "ToolTip": "D:\\dev\\repos\\ThisAndThat\\projects\\ThisAndThat\\GetDataAndPrintDataUsingCurl\\test.cpp",
+              "RelativeToolTip": "GetDataAndPrintDataUsingCurl\\test.cpp",
+              "ViewState": "AgIAANYAAAAAAAAAAAAAAN0AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-10-29T12:19:59.742Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

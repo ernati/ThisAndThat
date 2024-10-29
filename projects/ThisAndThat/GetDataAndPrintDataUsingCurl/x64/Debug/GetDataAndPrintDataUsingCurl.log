@@ -1,0 +1,6 @@
+﻿test.obj : error LNK2019: __imp_curl_easy_strerrormain 함수에서 참조되는 확인할 수 없는 외부 기호
+test.obj : error LNK2019: __imp_curl_easy_initmain 함수에서 참조되는 확인할 수 없는 외부 기호
+test.obj : error LNK2019: __imp_curl_easy_setoptmain 함수에서 참조되는 확인할 수 없는 외부 기호
+test.obj : error LNK2019: __imp_curl_easy_performmain 함수에서 참조되는 확인할 수 없는 외부 기호
+test.obj : error LNK2019: __imp_curl_easy_cleanupmain 함수에서 참조되는 확인할 수 없는 외부 기호
+D:\dev\repos\ThisAndThat\projects\ThisAndThat\x64\Debug\GetDataAndPrintDataUsingCurl.exe : fatal error LNK1120: 5개의 확인할 수 없는 외부 참조입니다.
