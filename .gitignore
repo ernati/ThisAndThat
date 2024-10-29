@@ -1,5 +1,5 @@
 # 실행파일 제거
-ThisAndThat/projects/ThisAndThat/GetDataAndPrintDataUsingCurl/x64/Debug
-ThisAndThat/projects/ThisAndThat/GetDataAndPrintDataUsingCurl/x64/Release
+ThisAndThat/projects/ThisAndThat/x64/Debug
+ThisAndThat/projects/ThisAndThat/x64/Release
 *.vsidx
 *.ipch
