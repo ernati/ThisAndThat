@@ -3,8 +3,8 @@
   "WorkspaceRootPath": "D:\\dev\\repos\\ThisAndThat\\projects\\ThisAndThat\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{CEBF3392-110E-4928-A169-D483012095BA}|WindowsAutomation\\WindowsAutomation.vcxproj|D:\\dev\\repos\\ThisAndThat\\projects\\ThisAndThat\\WindowsAutomation\\WindowsAutomation.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{CEBF3392-110E-4928-A169-D483012095BA}|WindowsAutomation\\WindowsAutomation.vcxproj|solutionrelative:WindowsAutomation\\WindowsAutomation.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{3313048E-35E9-4628-8654-D1B8880C7F27}|OptimizedC\u002B\u002B\\OptimizedC\u002B\u002B.vcxproj|D:\\dev\\repos\\ThisAndThat\\projects\\ThisAndThat\\OptimizedC\u002B\u002B\\4_String_Optimization.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{3313048E-35E9-4628-8654-D1B8880C7F27}|OptimizedC\u002B\u002B\\OptimizedC\u002B\u002B.vcxproj|solutionrelative:OptimizedC\u002B\u002B\\4_String_Optimization.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -19,14 +19,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "WindowsAutomation.cpp",
-              "DocumentMoniker": "D:\\dev\\repos\\ThisAndThat\\projects\\ThisAndThat\\WindowsAutomation\\WindowsAutomation.cpp",
-              "RelativeDocumentMoniker": "WindowsAutomation\\WindowsAutomation.cpp",
-              "ToolTip": "D:\\dev\\repos\\ThisAndThat\\projects\\ThisAndThat\\WindowsAutomation\\WindowsAutomation.cpp",
-              "RelativeToolTip": "WindowsAutomation\\WindowsAutomation.cpp",
-              "ViewState": "AgIAAFQAAAAAAAAAAADgv3YAAAAAAAAAAAAAAA==",
+              "Title": "4_String_Optimization.cpp",
+              "DocumentMoniker": "D:\\dev\\repos\\ThisAndThat\\projects\\ThisAndThat\\OptimizedC\u002B\u002B\\4_String_Optimization.cpp",
+              "RelativeDocumentMoniker": "OptimizedC\u002B\u002B\\4_String_Optimization.cpp",
+              "ToolTip": "D:\\dev\\repos\\ThisAndThat\\projects\\ThisAndThat\\OptimizedC\u002B\u002B\\4_String_Optimization.cpp",
+              "RelativeToolTip": "OptimizedC\u002B\u002B\\4_String_Optimization.cpp",
+              "ViewState": "AgIAAEYAAAAAAAAAAADwv3kAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-12-15T14:36:45.128Z",
+              "WhenOpened": "2025-01-05T06:20:49.526Z",
               "EditorCaption": ""
             }
           ]
