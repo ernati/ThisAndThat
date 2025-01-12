@@ -26,6 +26,7 @@ public:
 	int value;
 	BSTNode* left;
 	BSTNode* right;
+	BSTNode* parent;
 };
 
 BSTNode::BSTNode(int key, int value) {
@@ -34,6 +35,7 @@ BSTNode::BSTNode(int key, int value) {
 
 	this->left = nullptr;
 	this->right = nullptr;
+	this->parent = nullptr;
 }
 
 
@@ -46,6 +48,7 @@ public:
 	BSTNode* RootNode;
 	BSTNode* find(int key);
 	BSTNode* insert(int key, int value);
+	BSTNode* DeleteNode(int key);
 
 	void printTree();
 
@@ -147,7 +150,7 @@ void BST::printTree()
 BSTNode* BST::find(int key) 
 {
 	//1. 루트 노드로부터 시작.
-	if (!(this->RootNode)) {
+	if ((this->RootNode)) {
 		//1.A 현재 노드의 왼쪽으로 가야함.
 		if ((key < this->RootNode->key)) {
 			return find_internal(key, this->RootNode->left); // 왼쪽 노드가 존재하는지는 internal 함수에서 처리.
@@ -217,6 +220,7 @@ BSTNode* BST::insert(int key, int value)
 			if (!(CurrentNode->left)) {
 				BSTNode* newNode = new BSTNode(key, value);
 				CurrentNode->left = newNode;
+				newNode->parent = CurrentNode;
 
 				return CurrentNode->left;
 			}
@@ -233,6 +237,7 @@ BSTNode* BST::insert(int key, int value)
 			if (!(CurrentNode->right)) {
 				BSTNode* newNode = new BSTNode(key, value);
 				CurrentNode->right = newNode;
+				newNode->parent = CurrentNode;
 
 				return CurrentNode->right;
 			}
@@ -250,16 +255,119 @@ BSTNode* BST::insert(int key, int value)
 }
 
 
+//삭제
+//1. 삭제할 노드가 Leaf 노드 -> 부모 노드 정보 수정 후 삭제
+//2. 자식 노드가 하나인 노드의 삭제 -> 자신 자리에 자식 노드를 놓고, 삭제하면 됨.
+//3. 자식노드가 2개인 노드의 삭제
+// -> 삭제할 노드를 투르노드로 하는 서브 트리를 생각해보면, 전체값 중 중앙값이 사라지는 셈이므로,
+// -> 새로운 중앙값을 찾는다.
+// -> 즉, 삭제할 노드의 왼쪽 서브트리 중 최대값을 고르거나, 오른쪽 서브 트리 중 최소값을 고르면 된다.
+BSTNode* BST::DeleteNode(int key)
+{
+	//0. 찾는 노드가 존재하는지 체크
+	BSTNode* CurrentNode = find(key);
+	if (!CurrentNode) return nullptr;
+
+	//1. 처리
+	//1.A 삭제할 노드가 Leaf노드
+	if (IsLeafNode(CurrentNode)) {
+		//1.A.1 부모 노드에서 해당 자식 노드를 null
+		if (CurrentNode->parent->left == CurrentNode) {
+			CurrentNode->parent->left = nullptr;
+		}
+		else {
+			CurrentNode->parent->right = nullptr;
+		}
+		delete CurrentNode;
+	}
+	//1.B 자식노드가 하나임.
+	//왼쪽만 존재
+	else if ( ((CurrentNode->left) && !(CurrentNode->right)) ) {
+		BSTNode* tmp = CurrentNode;
+		//1.B.1 삭제할 노드의 부모 노드 처리
+		if (CurrentNode->parent->left == CurrentNode) {
+			CurrentNode->parent->left = CurrentNode->left;
+		}
+		else {
+			CurrentNode->parent->right = CurrentNode->left;
+		}
+
+		//1.B.2 자식 노드의 부모를 기존 부모로 추가
+		CurrentNode->left->parent = CurrentNode->parent;
+		delete tmp;
+	}
+	//오른쪽만 존재
+	else if ( !((CurrentNode->left) && (CurrentNode->right)) ) {
+		BSTNode* tmp = CurrentNode;
+		//1.B.1 삭제할 노드의 부모 노드 처리
+		if (CurrentNode->parent->left == CurrentNode) {
+			CurrentNode->parent->left = CurrentNode->right;
+		}
+		else {
+			CurrentNode->parent->right = CurrentNode->right;
+		}
+
+		//1.B.2 자식 노드의 부모를 기존 부모로 추가
+		CurrentNode->right->parent = CurrentNode->parent;
+		delete tmp;
+	}
+
+	// 둘다 존재
+	else if (((CurrentNode->left) && (CurrentNode->right))) {
+		//1. 왼쪽 서브트리에서 가장 큰 값을 찾는다. ( 가장 오른쪽 )
+		BSTNode* leftMaxNode = CurrentNode->left;
+		while (!IsLeafNode(leftMaxNode)) {
+			leftMaxNode = leftMaxNode->right;
+		}
+
+		// 2. 해당 값을 삭제할 노드의 위치로 변경한다.
+		// 2.1 이동할 노드의 부모 노드 처리, 이동할 노드에서도 부모 정보 삭제
+		leftMaxNode->parent->right = nullptr;
+		leftMaxNode->parent = nullptr;
+
+		//2.2 현재 노드 메모리 해제를 위한 tmp
+		BSTNode* tmp = CurrentNode;
+
+		// 2.3 현재 노드를 왼쪽 서브트리 최대값으로 치환
+		// 2.3.1 최대값 노드의 부모를 CurrentNode의 부모로 치환
+		leftMaxNode->parent = CurrentNode->parent;
+		//2.3.2 자식
+		leftMaxNode->right = CurrentNode->right;
+		leftMaxNode->left = CurrentNode->left;
+
+		printf("");
+		//3. 기존 노드 메모리 해제
+		delete tmp;
+	}
+
+	//exceptional cases
+	else {
+		;
+	}
+}
+
+
 int main()
 {
 	BST BinarySearchTree = BST(1, 2);
-	std::cout << "Root : " << BinarySearchTree.RootNode->key << "\n";
+	BinarySearchTree.printTree();
 	
 	BinarySearchTree.insert(5, 8);
-	BinarySearchTree.insert(10, 12);
-	BinarySearchTree.insert(2, 6);
-	BinarySearchTree.insert(3, 4);
+	BinarySearchTree.printTree();
 
+	BinarySearchTree.insert(10, 12);
+	BinarySearchTree.printTree();
+
+	BinarySearchTree.insert(2, 6);
+	BinarySearchTree.printTree();
+
+	BinarySearchTree.insert(3, 4); 
+	BinarySearchTree.printTree();
+
+	BinarySearchTree.insert(5, 5);
+	BinarySearchTree.printTree();
+
+	BinarySearchTree.DeleteNode(5);
 	BinarySearchTree.printTree();
 	
 	return 0;
