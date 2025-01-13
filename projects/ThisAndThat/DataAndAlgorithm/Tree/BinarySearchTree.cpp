@@ -27,6 +27,7 @@ public:
 	BSTNode* left;
 	BSTNode* right;
 	BSTNode* parent;
+	int LeftOrRight; // 0 : 부모 노드 없음, 1 : 부모 노드의 left 자식, 2 : 부모 노드의 right 자식
 };
 
 BSTNode::BSTNode(int key, int value) {
@@ -36,6 +37,7 @@ BSTNode::BSTNode(int key, int value) {
 	this->left = nullptr;
 	this->right = nullptr;
 	this->parent = nullptr;
+	LeftOrRight = 0;
 }
 
 
@@ -59,6 +61,8 @@ private:
 
 	bool IsNodesInVectorAllNull(std::vector<BSTNode*>& vNodes);
 
+	BSTNode* swapNode(BSTNode* NodeA, BSTNode* NodeB);
+
 };
 
 // 생성자 : key, value 값을 인자로 받아서, 해당 값을 가지는 RootNode를 생성함.
@@ -76,6 +80,7 @@ bool BST::IsNodesInVectorAllNull(std::vector<BSTNode*>& vNodes)
 	return true;
 }
 
+// 트리를 출력하는 함수
 void BST::printTree()
 {
 	//1. vector 선언.
@@ -189,6 +194,7 @@ BSTNode* BST::find_internal(int key, BSTNode* CurrentNode)
 }
 
 
+// 입력으로 들어온 노드가 leaf 노드인지 체크하는 함수
 bool BST::IsLeafNode(BSTNode* CurrentNode)
 {
 	// 0. 파라미터 null check
@@ -221,6 +227,7 @@ BSTNode* BST::insert(int key, int value)
 				BSTNode* newNode = new BSTNode(key, value);
 				CurrentNode->left = newNode;
 				newNode->parent = CurrentNode;
+				newNode->LeftOrRight = 1;
 
 				return CurrentNode->left;
 			}
@@ -238,6 +245,7 @@ BSTNode* BST::insert(int key, int value)
 				BSTNode* newNode = new BSTNode(key, value);
 				CurrentNode->right = newNode;
 				newNode->parent = CurrentNode;
+				newNode->LeftOrRight = 2;
 
 				return CurrentNode->right;
 			}
@@ -252,6 +260,126 @@ BSTNode* BST::insert(int key, int value)
 		else return CurrentNode;
 
 	}
+}
+
+// 두 노드의 위치를 맞바꾸는 함수
+BSTNode* BST::swapNode(BSTNode* NodeA, BSTNode* NodeB)
+{
+	// 0. null 체크
+	if (!NodeA || !NodeB) return nullptr;
+
+	BSTNode* tmp = nullptr;
+	int nTmp = -1;
+
+	//1. parent 맞바꾸기
+	//1.1 부모 -> 노드 값 바꾸기
+	if (NodeA->LeftOrRight == 1) { // 이 노드는 부모 노드의 왼쪽 노드
+		if (NodeB->LeftOrRight == 1) { // 여기도 왼쪽
+			tmp = NodeA->parent->left;
+			NodeA->parent->left = NodeB->parent->left;
+			NodeB->parent->left = tmp;
+		}
+		else if (NodeB->LeftOrRight == 2) {
+			tmp = NodeA->parent->left;
+			NodeA->parent->left = NodeB->parent->right;
+			NodeB->parent->right = tmp;
+		}
+		else { // NodeB가 루트 노드
+			NodeA->parent->left = NodeB;
+		}
+	}
+	else if (NodeA->LeftOrRight = 2) { // 오른쪽
+		if (NodeB->LeftOrRight == 1) { // 왼쪽
+			tmp = NodeA->parent->right;
+			NodeA->parent->right = NodeB->parent->left;
+			NodeB->parent->left = tmp;
+		}
+		else if (NodeB->LeftOrRight == 2) {
+			tmp = NodeA->parent->right;
+			NodeA->parent->right = NodeB->parent->right;
+			NodeB->parent->right = tmp;
+		}
+		else { // NodeB가 루트 노드
+			NodeA->parent->right = NodeB;
+		}
+	}
+	else { // 노드 A가 루트노드
+		if (NodeB->LeftOrRight == 1) { // 왼쪽
+			NodeB->parent->left = NodeA;
+			NodeB->parent = nullptr;
+			NodeB->LeftOrRight = 0;
+		}
+		else if (NodeB->LeftOrRight == 2) {
+			NodeB->parent->right = NodeA;
+			NodeB->parent = nullptr;
+			NodeB->LeftOrRight = 0;
+		}
+		else {
+			//No cases
+		}
+	}
+
+	//1.2 노드 -> 부모 값 바꾸기
+	tmp = NodeA->parent;
+	NodeA->parent = NodeB->parent;
+	NodeB->parent = tmp;
+
+	//1.3 LeftOrRight 값 바꾸기
+	nTmp = NodeA->LeftOrRight;
+	NodeA->LeftOrRight = NodeB->LeftOrRight;
+	NodeB->LeftOrRight = nTmp;
+
+
+	//2. 자식 노드 맞바꾸기
+	//2.1 자식 -> 노드
+	//2.1.A 둘다 리프 노드
+	if (IsLeafNode(NodeA) && IsLeafNode(NodeB)) {
+		// 할거 없음
+	}
+	//2.1.B NodeA만 리프 노드
+	if (IsLeafNode(NodeA) && !IsLeafNode(NodeB)) {
+		if (NodeB->left) {
+			NodeB->left->parent = NodeA;
+		}
+		if (NodeB->right) {
+			NodeB->right->parent = NodeA;
+		}
+	}
+	//2.1.C NodeB만 리프 노드
+	if (!IsLeafNode(NodeA) && !IsLeafNode(NodeB)) {
+		if (NodeA->left) {
+			NodeA->left->parent = NodeB;
+		}
+		if (NodeA->right) {
+			NodeA->right->parent = NodeB;
+		}
+	}
+	//2.1.D 둘다 리프노드 아님
+	else {
+		if (NodeA->left) {
+			NodeA->left->parent = NodeB;
+		}
+		if (NodeA->right) {
+			NodeA->right->parent = NodeB;
+		}
+		if (NodeB->left) {
+			NodeB->left->parent = NodeA;
+		}
+		if (NodeB->right) {
+			NodeB->right->parent = NodeA;
+		}
+	}
+
+	//2.2 노드 -> 자식
+	tmp = NodeA->left;
+	NodeA->left = NodeB->left;
+	NodeB->left = tmp;
+
+	tmp = NodeA->right;
+	NodeA->right = NodeB->right;
+	NodeB->right = tmp;
+
+	return NodeA;
 }
 
 
@@ -322,22 +450,33 @@ BSTNode* BST::DeleteNode(int key)
 
 		// 2. 해당 값을 삭제할 노드의 위치로 변경한다.
 		// 2.1 이동할 노드의 부모 노드 처리, 이동할 노드에서도 부모 정보 삭제
-		leftMaxNode->parent->right = nullptr;
-		leftMaxNode->parent = nullptr;
+		//leftMaxNode->parent->right = nullptr;
+		//leftMaxNode->parent = nullptr;
 
 		//2.2 현재 노드 메모리 해제를 위한 tmp
 		BSTNode* tmp = CurrentNode;
 
 		// 2.3 현재 노드를 왼쪽 서브트리 최대값으로 치환
-		// 2.3.1 최대값 노드의 부모를 CurrentNode의 부모로 치환
-		leftMaxNode->parent = CurrentNode->parent;
-		//2.3.2 자식
-		leftMaxNode->right = CurrentNode->right;
-		leftMaxNode->left = CurrentNode->left;
+		// 2.3.1 현재 노드의 key와 value를 왼쪽 서브트리 최대값으로 치환
+		CurrentNode->key = leftMaxNode->key;
+		CurrentNode->value = leftMaxNode->value;
 
-		printf("");
-		//3. 기존 노드 메모리 해제
-		delete tmp;
+		// 2.3.2 기존 왼쪽 서브트리 최대값 노드를 없애기
+		// 2.3.2.A 해당 노드가 리프 노드 -> 
+		if (IsLeafNode(leftMaxNode)) {
+			//1.A.1 부모 노드에서 해당 자식 노드를 null 
+			leftMaxNode->parent->right = nullptr;
+			delete leftMaxNode;
+		}
+		//2.3.2.B 해당 노드가 리프노드가 아님( 왼쪽 자식 노드만 존재 )
+		else {
+			//2.3.2.B.1 삭제할 노드의 부모 노드 처리
+			leftMaxNode->parent->right = leftMaxNode->left;
+
+			//1.B.2 자식 노드의 부모를 기존 부모로 추가
+			leftMaxNode->left->parent = leftMaxNode->parent;
+			delete leftMaxNode;
+		}
 	}
 
 	//exceptional cases

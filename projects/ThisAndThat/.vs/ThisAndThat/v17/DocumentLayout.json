@@ -3,8 +3,8 @@
   "WorkspaceRootPath": "D:\\dev\\repos\\ThisAndThat\\projects\\ThisAndThat\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{CEBF3392-110E-4928-A169-D483012095BA}|WindowsAutomation\\WindowsAutomation.vcxproj|D:\\dev\\repos\\ThisAndThat\\projects\\ThisAndThat\\WindowsAutomation\\WindowsAutomation.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{CEBF3392-110E-4928-A169-D483012095BA}|WindowsAutomation\\WindowsAutomation.vcxproj|solutionrelative:WindowsAutomation\\WindowsAutomation.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{20FDE81C-5631-418B-BA34-A85262173462}|DataAndAlgorithm\\DataAndAlgorithm.vcxproj|D:\\dev\\repos\\ThisAndThat\\projects\\ThisAndThat\\DataAndAlgorithm\\Tree\\BinarySearchTree.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{20FDE81C-5631-418B-BA34-A85262173462}|DataAndAlgorithm\\DataAndAlgorithm.vcxproj|solutionrelative:DataAndAlgorithm\\Tree\\BinarySearchTree.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -19,14 +19,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "WindowsAutomation.cpp",
-              "DocumentMoniker": "D:\\dev\\repos\\ThisAndThat\\projects\\ThisAndThat\\WindowsAutomation\\WindowsAutomation.cpp",
-              "RelativeDocumentMoniker": "WindowsAutomation\\WindowsAutomation.cpp",
-              "ToolTip": "D:\\dev\\repos\\ThisAndThat\\projects\\ThisAndThat\\WindowsAutomation\\WindowsAutomation.cpp",
-              "RelativeToolTip": "WindowsAutomation\\WindowsAutomation.cpp",
-              "ViewState": "AgIAANsAAAAAAAAAAAAAAP8AAAAiAAAAAAAAAA==",
+              "Title": "BinarySearchTree.cpp",
+              "DocumentMoniker": "D:\\dev\\repos\\ThisAndThat\\projects\\ThisAndThat\\DataAndAlgorithm\\Tree\\BinarySearchTree.cpp",
+              "RelativeDocumentMoniker": "DataAndAlgorithm\\Tree\\BinarySearchTree.cpp",
+              "ToolTip": "D:\\dev\\repos\\ThisAndThat\\projects\\ThisAndThat\\DataAndAlgorithm\\Tree\\BinarySearchTree.cpp",
+              "RelativeToolTip": "DataAndAlgorithm\\Tree\\BinarySearchTree.cpp",
+              "ViewState": "AgIAAM4BAAAAAAAAAADwv/oBAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-01-12T12:28:35.106Z",
+              "WhenOpened": "2025-01-13T11:29:41.88Z",
               "EditorCaption": ""
             }
           ]
