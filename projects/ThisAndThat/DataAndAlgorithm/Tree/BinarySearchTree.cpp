@@ -486,28 +486,28 @@ BSTNode* BST::DeleteNode(int key)
 }
 
 
-int main()
-{
-	BST BinarySearchTree = BST(1, 2);
-	BinarySearchTree.printTree();
-	
-	BinarySearchTree.insert(5, 8);
-	BinarySearchTree.printTree();
-
-	BinarySearchTree.insert(10, 12);
-	BinarySearchTree.printTree();
-
-	BinarySearchTree.insert(2, 6);
-	BinarySearchTree.printTree();
-
-	BinarySearchTree.insert(3, 4); 
-	BinarySearchTree.printTree();
-
-	BinarySearchTree.insert(5, 5);
-	BinarySearchTree.printTree();
-
-	BinarySearchTree.DeleteNode(5);
-	BinarySearchTree.printTree();
-	
-	return 0;
-}
+//int main()
+//{
+//	BST BinarySearchTree = BST(1, 2);
+//	BinarySearchTree.printTree();
+//	
+//	BinarySearchTree.insert(5, 8);
+//	BinarySearchTree.printTree();
+//
+//	BinarySearchTree.insert(10, 12);
+//	BinarySearchTree.printTree();
+//
+//	BinarySearchTree.insert(2, 6);
+//	BinarySearchTree.printTree();
+//
+//	BinarySearchTree.insert(3, 4); 
+//	BinarySearchTree.printTree();
+//
+//	BinarySearchTree.insert(5, 5);
+//	BinarySearchTree.printTree();
+//
+//	BinarySearchTree.DeleteNode(5);
+//	BinarySearchTree.printTree();
+//	
+//	return 0;
+//}

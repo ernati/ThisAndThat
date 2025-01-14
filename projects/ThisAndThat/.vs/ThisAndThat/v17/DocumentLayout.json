@@ -3,8 +3,12 @@
   "WorkspaceRootPath": "D:\\dev\\repos\\ThisAndThat\\projects\\ThisAndThat\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{20FDE81C-5631-418B-BA34-A85262173462}|DataAndAlgorithm\\DataAndAlgorithm.vcxproj|D:\\dev\\repos\\ThisAndThat\\projects\\ThisAndThat\\DataAndAlgorithm\\Tree\\BinarySearchTree.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{20FDE81C-5631-418B-BA34-A85262173462}|DataAndAlgorithm\\DataAndAlgorithm.vcxproj|solutionrelative:DataAndAlgorithm\\Tree\\BinarySearchTree.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{20FDE81C-5631-418B-BA34-A85262173462}|DataAndAlgorithm\\DataAndAlgorithm.vcxproj|D:\\dev\\repos\\ThisAndThat\\projects\\ThisAndThat\\DataAndAlgorithm\\AVLTree.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{20FDE81C-5631-418B-BA34-A85262173462}|DataAndAlgorithm\\DataAndAlgorithm.vcxproj|solutionrelative:DataAndAlgorithm\\AVLTree.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3313048E-35E9-4628-8654-D1B8880C7F27}|OptimizedC\u002B\u002B\\OptimizedC\u002B\u002B.vcxproj|D:\\dev\\repos\\ThisAndThat\\projects\\ThisAndThat\\OptimizedC\u002B\u002B\\4_String_Optimization.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{3313048E-35E9-4628-8654-D1B8880C7F27}|OptimizedC\u002B\u002B\\OptimizedC\u002B\u002B.vcxproj|solutionrelative:OptimizedC\u002B\u002B\\4_String_Optimization.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,19 +18,32 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "BinarySearchTree.cpp",
-              "DocumentMoniker": "D:\\dev\\repos\\ThisAndThat\\projects\\ThisAndThat\\DataAndAlgorithm\\Tree\\BinarySearchTree.cpp",
-              "RelativeDocumentMoniker": "DataAndAlgorithm\\Tree\\BinarySearchTree.cpp",
-              "ToolTip": "D:\\dev\\repos\\ThisAndThat\\projects\\ThisAndThat\\DataAndAlgorithm\\Tree\\BinarySearchTree.cpp",
-              "RelativeToolTip": "DataAndAlgorithm\\Tree\\BinarySearchTree.cpp",
-              "ViewState": "AgIAAM4BAAAAAAAAAADwv/oBAAAeAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "4_String_Optimization.cpp",
+              "DocumentMoniker": "D:\\dev\\repos\\ThisAndThat\\projects\\ThisAndThat\\OptimizedC\u002B\u002B\\4_String_Optimization.cpp",
+              "RelativeDocumentMoniker": "OptimizedC\u002B\u002B\\4_String_Optimization.cpp",
+              "ToolTip": "D:\\dev\\repos\\ThisAndThat\\projects\\ThisAndThat\\OptimizedC\u002B\u002B\\4_String_Optimization.cpp",
+              "RelativeToolTip": "OptimizedC\u002B\u002B\\4_String_Optimization.cpp",
+              "ViewState": "AgIAADUAAAAAAAAAAAAAAFoAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-01-13T11:29:41.88Z",
+              "WhenOpened": "2025-01-14T13:55:15.123Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AVLTree.cpp",
+              "DocumentMoniker": "D:\\dev\\repos\\ThisAndThat\\projects\\ThisAndThat\\DataAndAlgorithm\\AVLTree.cpp",
+              "RelativeDocumentMoniker": "DataAndAlgorithm\\AVLTree.cpp",
+              "ToolTip": "D:\\dev\\repos\\ThisAndThat\\projects\\ThisAndThat\\DataAndAlgorithm\\AVLTree.cpp",
+              "RelativeToolTip": "DataAndAlgorithm\\AVLTree.cpp",
+              "ViewState": "AgIAACsAAAAAAAAAAAAAAEsAAABNAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-01-14T13:19:00.027Z",
               "EditorCaption": ""
             }
           ]
